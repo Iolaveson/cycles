@@ -47,13 +47,13 @@ class HandleCollisionsAction(Action):
 
         if head1.get_position().equals(food.get_position()):
             points = food.get_points()
-            snakes.grow_tail(points)
+            snake1.grow_tail(points)
             score.add_points(points)
             food.reset()
         
         elif head2.get_position().equals(food.get_position()):
             points = food.get_points()
-            snakes.grow_tail(points)
+            snake2.grow_tail(points)
             score.add_points(points)
             food.reset()
     
