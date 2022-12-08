@@ -24,7 +24,7 @@ class ControlActorsAction(Action):
         self._direction2 = Point(-1 * constants.CELL_SIZE, 0)
         self._is_game_over = False
 
-    def execute(self, cast, is_game_over, script):
+    def execute(self, cast, script):
         """Executes the control actors action.
 
         Args:
@@ -70,5 +70,5 @@ class ControlActorsAction(Action):
         snake2 = snakes[1]
         snake2.turn_head(self._direction2)
         
-    def set_is_game_over(self, is_game_over):
-        self._is_game_over = is_game_over
+    # def set_is_game_over(self, is_game_over):
+    #     self._is_game_over = is_game_over

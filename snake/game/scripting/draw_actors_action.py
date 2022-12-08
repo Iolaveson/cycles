@@ -19,15 +19,15 @@ class DrawActorsAction(Action):
         """
         self._video_service = video_service
 
-    def execute(self, cast, is_game_over, script):
+    def execute(self, cast, script):
         """Executes the draw actors action.
 
         Args:
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        score1= cast.get_first_actor("scores")
-        score2= cast.get_first_actor("scores")
+        score1= cast.get_first_actor("scores1")
+        score2= cast.get_first_actor("scores2")
 
         food = cast.get_first_actor("foods")
         snakes = cast.get_actors("snakes")

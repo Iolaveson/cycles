@@ -18,7 +18,7 @@ class HandleCollisionsAction(Action):
         """Constructs a new HandleCollisionsAction."""
         self._is_game_over = False
 
-    def execute(self, cast, is_game_over, script): 
+    def execute(self, cast, script): 
         """Executes the handle collisions action.
 
         Args:
@@ -72,19 +72,18 @@ class HandleCollisionsAction(Action):
         head2 = snake2.get_segments()[0]
         segments2 = snake2.get_segments()[1:]
         
-        for segment in segments1:
-            if head1.get_position().equals(segment.get_position()):
-                self._is_game_over = True
-            for segment in segments2:
-                if head1.get_position().equals(segment.get_position()):
-                    self._is_game_over = True
+        # for segment in segments1:
+        #     if head1.get_position().equals(segment.get_position()):
+        #         self._is_game_over = True
+        
+        #     elif head2.get_position().equals(segment.get_position()):
+        #         self._is_game_over = True
 
-        for segment in segments2:
-            if head2.get_position().equals(segment.get_position()):
-                self._is_game_over = True
-            for segment in segments1:
-                if head2.get_position().equals(segment.get_position()):
-                    self._is_game_over = True
+        # for segment in segments2:
+        #     if head1.get_position().equals(segment.get_position()):
+        #         self._is_game_over = True
+        #     if head2.get_position().equals(segment.get_position()):
+        #         self._is_game_over = True
         
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
@@ -117,5 +116,5 @@ class HandleCollisionsAction(Action):
                 segment.set_color(constants.RED)
             food.set_color(constants.WHITE)
 
-    def get_is_game_over(self):
-        return self._is_game_over
+    # def get_is_game_over(self):
+    #     return self._is_game_over
